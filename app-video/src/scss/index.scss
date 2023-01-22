@@ -1,0 +1,13 @@
+$primary: #1F3B63;
+$secondary: #337AB7;
+$dark: #121F1F;
+$light: #fffad7;
+$body-bg: #fff;
+$body-color: #fff;
+
+$nav-link-color: #1F3B63;
+$nav-pills-link-active-color: #FFFFFF;
+$nav-pills-link-active-bg: $dark;
+$enable-shadows: true;
+
+@import "../../node_modules/bootstrap/scss/bootstrap"
