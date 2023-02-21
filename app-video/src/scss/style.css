@@ -1,33 +1,35 @@
 .app-container {  display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 0.1fr 0.25fr 1fr 0.25fr 0.75fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.1fr 0.25fr 1fr 0.25fr 225px;
     gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas:
-      "pnl-header pnl-header"
-      "pnl-load pnl-load"
-      "pnl-video pnl-input"
-      "pnl-video-control pnl-view"
-      "pnl-list pnl-view";
+      "pnl-header pnl-header pnl-header"
+      "pnl-load pnl-load pnl-load"
+      "pnl-video pnl-video pnl-input"
+      "pnl-video pnl-video pnl-input"
+      "pnl-list pnl-list pnl-view";
   }
   
 .pnl-header { grid-area: pnl-header; }
 
 .pnl-video { grid-area: pnl-video; }
 
-.pnl-video-control { grid-area: pnl-video-control; }
-
 .pnl-load { grid-area: pnl-load; }
 
 .pnl-input { grid-area: pnl-input; }
 
-.pnl-view { grid-area: pnl-view; }
+.pnl-view { grid-area: pnl-view; height: 100%}
 
 .pnl-list {
     grid-area: pnl-list;
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
+    overflow-y: hidden;
+    border-radius: 8px;
+    border-style: solid;
+    border-color: #1F3B63;
 }
   
 .style-footer {
@@ -41,8 +43,8 @@
     background: #fff;
     border-radius: 8px;
     padding: 10px;
-    width: 300px;
-    height: 0.7fr;
+    width: 200px;
+    height: 150px;
     margin: 16px;
     flex: 0 0 auto;
 }
@@ -60,5 +62,9 @@ video {
 }
 
 .input-main {
+    height: 100%;
+}
+
+.style-current-note {
     height: 100%;
 }

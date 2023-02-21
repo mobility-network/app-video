@@ -19,10 +19,6 @@ function Input(props) {
 
     function submitNote(event) {
         props.onAdd(note);
-        setNote({
-            title: "",
-            content: ""
-        });
 
         event.preventDefault()
     }
@@ -30,6 +26,12 @@ function Input(props) {
     return (
         <div class="input-main card p-3 mx-auto">
             <form class="text-primary my-auto">
+                <div class="mb-3">
+                <label for="noteTime" class="form-label">Timestamp:</label>
+                <input
+                    id="noteTime" name="time" type="text" class="form-control text-primary"
+                    disabled="disabled" value={props.time.toFixed(3)}/>
+                </div>
                 <div class="mb-3">
                     <label for="noteTitle" class="form-label">Title:</label>
                     <input
