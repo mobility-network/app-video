@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/mobilitynetwork-video/static/css/main.91064c63.css",
+    "main.js": "/mobilitynetwork-video/static/js/main.bad1f2a3.js",
+    "index.html": "/mobilitynetwork-video/index.html",
+    "main.91064c63.css.map": "/mobilitynetwork-video/static/css/main.91064c63.css.map",
+    "main.bad1f2a3.js.map": "/mobilitynetwork-video/static/js/main.bad1f2a3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.91064c63.css",
+    "static/js/main.bad1f2a3.js"
+  ]
+}
