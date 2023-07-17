@@ -1,1 +1,1 @@
-# mobility-network-video-analysis
+# app-accelerometer

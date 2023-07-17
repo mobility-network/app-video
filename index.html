@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="./src/scss/main.css">
+  <link rel="stylesheet" href="./src/scss/style.css">
+  <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+      <span class="navbar-brand mb-0 h1">Mobility Network: Video</span>
+    </div>
+  </nav>
+  <div id="output">output</div>
+  <div class="container-fluid">
+    <div class="row align-items-center d-flex justify-content-center">
+      <div class="col d-flex justify-content-end">
+        <ul class="nav nav-pills flex-column" id="tabs-vid-1" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="tab-vid-1" data-bs-toggle="tab" data-bs-target="#card-vid-1"
+              type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">
+              Video #1
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="tab-vid-2" data-bs-toggle="tab" data-bs-target="#card-vid-2"
+              type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">
+              Video #2
+            </button>
+          </li>
+        </ul>
+        <div class="tab-content" id="cards-vid-1">
+          <div class="tab-pane fade show active" id="card-vid-1" role="tabpanel" aria-labelledby="tab-vid-1" tabindex="0">
+            <div><video id="video-1" controls></video></div>
+            <input type="file" accept="video/*" style="display: none;" id="file-1"/>
+            <label for="file-1" class="btn btn-success btn-sm">Load Video</label>
+            <button type="button" class="btn btn-dark btn-sm" id="sync-video-1">Sync Start</button>
+            <div class="btn-group mx-1">
+              <button class="btn btn-outline-dark btn-sm" id="frame-prev-1">
+                <span class="bi bi-skip-backward-fill"></span>
+              </button>
+              <button class="btn btn-sm" disabled>Frame</button>
+              <button class="btn btn-outline-dark btn-sm" id="frame-next-1">
+                <span class="bi bi-skip-forward-fill"></span>
+              </button>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="card-vid-2" role="tabpanel" aria-labelledby="tab-vid-2" tabindex="0">
+            <div><video id="video-2" controls></video></div>
+            <input type="file" accept="video/*" style="display: none;" id="file-2"/>
+            <label for="file-2" class="btn btn-success btn-sm">Load Video</label>
+            <button type="button" class="btn btn-dark btn-sm" id="sync-video-2">Sync Start</button>
+            <div class="btn-group mx-1">
+              <button class="btn btn-outline-dark btn-sm" id="frame-prev-2">
+                <span class="bi bi-skip-backward-fill"></span>
+              </button>
+              <button class="btn btn-sm" disabled>Frame</button>
+              <button class="btn btn-outline-dark btn-sm" id="frame-next-2">
+                <span class="bi bi-skip-forward-fill"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col d-flex justify-content-start">
+          <ul class="row nav nav-pills flex-column" id="tabs-vid-2" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="tab-vid-3" data-bs-toggle="tab" data-bs-target="#card-vid-3"
+                type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">
+                Video #3
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="tab-vid-4" data-bs-toggle="tab" data-bs-target="#card-vid-4"
+                type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">
+                Video #4
+              </button>
+            </li>
+          </ul>
+        <div class="row tab-content" id="cards-vid-2">
+          <div class="tab-pane fade show active" id="card-vid-3" role="tabpanel" aria-labelledby="tab-vid-3" tabindex="0">
+            <div><video id="video-3" controls></video></div>
+            <input type="file" accept="video/*" style="display: none;" id="file-3"/>
+            <label for="file-3" class="btn btn-success btn-sm">Load Video</label>
+            <button type="button" class="btn btn-dark btn-sm" id="sync-video-3">Sync Start</button>
+            <div class="btn-group mx-1">
+              <button class="btn btn-outline-dark btn-sm" id="frame-prev-3">
+                <span class="bi bi-skip-backward-fill"></span>
+              </button>
+              <button class="btn btn-sm" disabled>Frame</button>
+              <button class="btn btn-outline-dark btn-sm" id="frame-next-3">
+                <span class="bi bi-skip-forward-fill"></span>
+              </button>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="card-vid-4" role="tabpanel" aria-labelledby="tab-vid-4" tabindex="0">
+            <div><video id="video-4" controls></video></div>
+            <input type="file" accept="video/*" style="display: none;" id="file-4"/>
+            <label for="file-4" class="btn btn-success btn-sm">Load Video</label>
+            <button type="button" class="btn btn-dark btn-sm" id="sync-video-4">Sync Start</button>
+            <div class="btn-group mx-1">
+              <button class="btn btn-outline-dark btn-sm" id="frame-prev-4">
+                <span class="bi bi-skip-backward-fill"></span>
+              </button>
+              <button class="btn btn-sm" disabled>Frame</button>
+              <button class="btn btn-outline-dark btn-sm" id="frame-next-4">
+                <span class="bi bi-skip-forward-fill"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row align-items-start my-3">
+      <div class="container d-flex justify-content-center bg-light border border-2 py-2">
+        <div class="btn-group mx-1">
+          <button class="btn btn-dark" disabled>Time</button>
+          <button class="btn" id="time" disabled>--.--</button>
+        </div>
+        <div class="btn-group mx-1">
+          <button class="btn btn-dark" id="ctrl-restart">
+            <span class="bi bi-arrow-clockwise"></span>
+            Restart
+          </button>
+          <button class="btn btn-success" id="ctrl-play">
+            <span class="bi bi-play-fill"></span>
+            Play
+          </button>
+        </div>
+        <div class="btn-group mx-1">
+          <button class="btn btn-outline-dark" id="ctrl-frame-prev">
+            <span class="bi bi-skip-backward-fill"></span>
+          </button>
+          <button class="btn btn-dark" disabled>Frame</button>
+          <button class="btn btn-outline-dark" id="ctrl-frame-next">
+            <span class="bi bi-skip-forward-fill"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="row align-items-start d-flex justify-content-center my-2">
+      <div class="col-3">
+        <div class="card text-white bg-dark mb-3" style="width: 100%; height: 300px;" id="card-annotate">
+          <div class="card-header">Add Annotation</div>
+          <div class="card-body">
+            <h4 id="input-time">--.--</h4>
+            <div class="input-group mb-3" style="height: 50%;">
+              <textarea type="text" class="form-control" placeholder="Add note here" id="input-text"></textarea>
+            </div>
+            <button class="btn btn-success" id="add-note">
+              Add Note
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-7">
+        <div class="card text-dark bg-light mb-3" style="width: 100%; height: 300px;">
+          <div class="card-header">Annotation List</div>
+          <div class="card-body" style="display: flex; overflow-x: scroll; overflow-y: hidden;" id="list-cards">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+<script src="./src/js/script.js"></script>
+</html>
