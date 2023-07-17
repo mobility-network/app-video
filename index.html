@@ -13,6 +13,9 @@
   <nav class="navbar navbar-dark bg-dark">
     <div class="container-fluid">
       <span class="navbar-brand mb-0 h1">Mobility Network: Video</span>
+      <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#helpModal">
+        Help
+      </button>
     </div>
   </nav>
   <div id="output">output</div>
@@ -167,6 +170,39 @@
     </div>
   </div>
 
+  <!-- Modal -->
+<div class="modal fade" id="helpModal" tabindex="-1" aria-labelledby="helpModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="helpModalLabel">Help</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <ol>
+          <li>Loading videos</li>
+            <ul>
+              <li>Use the <button class="btn btn-success">Load Video</button> under each video panel to select a file to load into the corresponding video player</li>
+            </ul>
+          <li>Syncing videos</li>
+          <ul>
+            <li>Use the <button class="btn btn-outline-dark"><</button> or <button class="btn btn-outline-dark">></button> under each video panel to step to the previous or next frame, respectively. Use frame seeking to find the specific start point of the video</li>
+            <li>Use the <button class="btn btn-dark">Sync Start</button> under each video panel to set the current video frame as the start time. All videos will play in sync according relative to their individual start times</li>
+          </ul>
+          <li>Playback controls</li>
+          <ul>
+            <li>Use the <button class="btn btn-dark">Restart</button> to reset all videos to their corresponding start frames</li>
+            <li>Use the <button class="btn btn-success">Play</button> to play all videos in sync</li>
+            <li>Use the <button class="btn btn-outline-dark"><</button> or <button class="btn btn-outline-dark">></button> to step all videos to the previous or next frame</li>
+          </ul>
+        </ol>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 </body>
 <script src="./src/js/script.js"></script>

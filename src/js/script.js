@@ -184,7 +184,7 @@ function handlePreviousFrame(idx) {
 }
 
 function handleViewFrame(idx, frameTime) {
-    AppData.videoDOM[idx].currentTime = frameTime;
+    AppData.videoDOM[idx].currentTime = AppData.videoStart[idx] + frameTime;
 }
 
 function handleSyncVideo(idx) {
