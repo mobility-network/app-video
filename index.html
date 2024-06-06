@@ -162,7 +162,12 @@
       </div>
       <div class="col-7">
         <div class="card text-dark bg-light mb-3" style="width: 100%; height: 300px;">
-          <div class="card-header">Annotation List</div>
+          <div class="card-header" style="position: relative; height: 6vh;">
+            Annotation List
+            <button class="btn btn-dark" id="export-notes" style="position: absolute; right: 1vw; height: 4vh;">
+              Export
+            </button>
+          </div>
           <div class="card-body" style="display: flex; overflow-x: scroll; overflow-y: hidden;" id="list-cards">
           </div>
         </div>
@@ -194,6 +199,10 @@
             <li>Use the <button class="btn btn-dark">Restart</button> to reset all videos to their corresponding start frames</li>
             <li>Use the <button class="btn btn-success">Play</button> to play all videos in sync</li>
             <li>Use the <button class="btn btn-outline-dark"><</button> or <button class="btn btn-outline-dark">></button> to step all videos to the previous or next frame</li>
+          </ul>
+          <li>Exporting data</li>
+          <ul>
+            <li>Use the <button class="btn btn-dark">Export</button> to save annotations to a .csv file</li>
           </ul>
         </ol>
       </div>

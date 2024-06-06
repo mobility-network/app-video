@@ -27,6 +27,7 @@ const CardContainer = document.getElementById("list-cards");
 const AddNote = document.getElementById("add-note");
 const InputTime = document.getElementById("input-time");
 const InputText = document.getElementById("input-text");
+const ExportBtn = document.getElementById("export-notes");
 const iconPlay  ="<span class='bi bi-play-fill'></span>";
 const iconPause  ="<span class='bi bi-pause-fill'></span>";
 
@@ -51,6 +52,15 @@ window.onload = function () {
     setVideoControlBar();
     // Set Add Note Controls
     setNoteInputs();
+    // Add export button function
+    ExportBtn.onclick = function () {
+        console.log(AppData)
+        var a = document.createElement("a");
+        var file = new Blob([JSON.stringify(AppData)], {type: 'text/plain'});
+        a.href = URL.createObjectURL(file);
+        a.download = 'video-annotations.txt';
+        a.click();
+    }
 }
 
 function setVideoSize(width, height) {
@@ -162,6 +172,7 @@ function setNoteInputs() {
         let text = InputText.value;
         
         createCard(time, text)
+        AppData.noteList.push({'time': time, 'text': text})
     }
 }
 
@@ -234,3 +245,4 @@ function createCard(time, text) {
     card.appendChild(cardBody);
     CardContainer.appendChild(card);
 }
+
